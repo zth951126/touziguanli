@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>每日行业主题基金推荐系统</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📈 每日行业主题基金推荐</h1>
+      <p class="subtitle">基于均线、MACD、RSI、KDJ、布林带等技术信号的每日买卖策略 · 覆盖CPO、黄金、AI、半导体、新能源、美股等大方向</p>
+      <div class="toolbar">
+        <span id="updatedAt" class="updated-at">数据加载中...</span>
+        <button id="refreshBtn" class="btn btn-primary">🔄 刷新数据</button>
+      </div>
+    </header>
+
+    <section class="news-section">
+      <h2>🔥 重要财经新闻</h2>
+      <div class="news-toolbar">
+        <button class="news-tab active" data-news="all">全部</button>
+        <button class="news-tab" data-news="domestic">国内</button>
+        <button class="news-tab" data-news="international">国际</button>
+      </div>
+      <ul id="newsList" class="news-list">
+        <li class="news-loading">正在加载新闻...</li>
+      </ul>
+    </section>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="all">全部推荐</button>
+      <button class="tab" data-tab="funds">行业主题ETF</button>
+      <button class="tab" data-tab="offsite-funds">场外基金</button>
+      <button class="tab" data-tab="portfolio">我的持仓</button>
+    </nav>
+
+    <section class="summary" id="summary">
+      <div class="summary-card buy"><strong id="buyCount">0</strong><span>买入推荐</span></div>
+      <div class="summary-card hold"><strong id="holdCount">0</strong><span>观望</span></div>
+      <div class="summary-card sell"><strong id="sellCount">0</strong><span>卖出/减仓</span></div>
+    </section>
+
+    <main id="content">
+      <div class="loading">正在计算今日推荐策略，请稍候...</div>
+    </main>
+
+    <footer>
+      <p>⚠️ 免责声明：本系统仅为技术演示，不构成投资建议。股市有风险，投资需谨慎。</p>
+    </footer>
+  </div>
+
+  <div id="detailModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle">详细分析</h2>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
